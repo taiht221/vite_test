@@ -9,36 +9,5 @@
   <body>
     <div id="app"></div>
     <script type="module" src="/main.js"></script>
-    <script>
-      const myHeaders = new Headers();
-      myHeaders.append("Content-Type", "application/json");
-
-      const raw = JSON.stringify({
-        ContactKey: "taiht221@gmail.com",
-        EventDefinitionKey: "APIEvent-aef78d60-cf09-ea68-795c-19da9ac7c44d",
-        Data: {
-          firstname: "Eddie",
-          lastname: "Huynh",
-          email: "taiht221@gmail.com",
-          mobile: "0969045051",
-          eventdate: "2024-04-03",
-        },
-      });
-
-      const requestOptions = {
-        method: "POST",
-        headers: myHeaders,
-        body: raw,
-        redirect: "follow",
-      };
-
-      fetch(
-        "https://mcjz-zzh06y0vtm1d9233s4dj288.rest.marketingcloudapis.com/interaction/v1/events",
-        requestOptions
-      )
-        .then((response) => response.text())
-        .then((result) => console.log(result))
-        .catch((error) => console.error(error));
-    </script>
   </body>
 </html>
